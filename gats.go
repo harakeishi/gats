@@ -5,6 +5,7 @@ import (
 	"fmt"
 )
 
+// Returns the value of the passed basic type as a `string`.
 func ToString(a any) (string, error) {
 	var result string
 	switch a.(type) {
@@ -25,7 +26,7 @@ func ToString(a any) (string, error) {
 	case nil:
 		result = "nil"
 	default:
-		return "", errors.New("No suitable type found")
+		return "", errors.New("no suitable type found")
 	}
 	return result, nil
 }

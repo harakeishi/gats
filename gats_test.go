@@ -1,6 +1,9 @@
 package gats
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestToString(t *testing.T) {
 	type args struct {
@@ -177,4 +180,14 @@ func TestToString(t *testing.T) {
 			}
 		})
 	}
+}
+
+func ExampleToString() {
+	value := int16(11)
+	result, err := ToString(value)
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(result)
+	//Output: 11
 }
